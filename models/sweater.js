@@ -2,9 +2,18 @@ var mongoose = require('mongoose');
 
 var sweaterSchema = new mongoose.Schema({
   name: String,
-  flavor: {type: String, default: 'grizzly'},
-  fishPreference: {type: String, default: 'salmons'},
-  wranglerId: String
+  knitter: String,
+  knitterId: String,
+  wearer: String,
+  size: String,
+  style: {
+    direction: String,
+    neck: String,
+    shoulders: String,
+    sleeveLength: String,
+    shaping: String,
+    length: String
+  }
 });
 
 module.exports = mongoose.model('Sweater', sweaterSchema);

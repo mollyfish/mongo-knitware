@@ -8,7 +8,7 @@ var sweatersRouter = module.exports = exports = express.Router();
 
 sweatersRouter.use(bodyParser.json());
 sweatersRouter.get('/sweaters', eatAuth, function(req, res) {
-  Sweater.find({wranglerId: req.user._id}, function(err, data) {
+  Sweater.find({knitterId: req.user._id}, function(err, data) {
     if (err) return handleError(err, res);
 
     res.json(data);
@@ -25,9 +25,8 @@ sweatersRouter.get('/allsweaters', function(req, res) {
 
 sweatersRouter.post('/sweaters', eatAuth, function(req, res) {
   var newSweater = new Sweater(req.body);
-  newSweater.wranglerId = req.user._id;
-  newSweater.wrangler = req.user.username;
-  debugger;
+  newSweater.knitterId = req.user._id;
+  newSweater.knitter = req.user.username;
   newSweater.save(function(err, data) {
     if (err) return handleError(err, res);
 
