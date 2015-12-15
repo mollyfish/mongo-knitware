@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sweater Wrangling</title>
+</head>
+<body data-ng-app="SweaterStreamApp">
+  <div data-ng-controller="AuthController" data-ng-init="getUser()">
+    <a href data-ng-if="currentUser" data-ng-click="logout()">
+      Log out {{currentUser}}
+    </a>
+    <main data-ng-view></main>
+  </div>
+  <script src="/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<section data-ng-init="getAll()">
+  <ul id="errorslist">
+    <li data-ng-repeat="error in errors">{{error}}</li>
+  </ul>
+
+  <div data-sweater-form-directive
+    data-button-text="Create New Sweater"
+    data-form-name="newSweaterForm"
+    data-heading-text="Create A New Sweater"
+    data-sweater="newSweater"
+    data-save="create(sweater)"
+  ></div>
+
+  <div data-list-directive data-title="sweaters">
+    <li data-ng-repeat="sweater in sweaters">
+      <div data-sweater-directive data-sweater="sweater"></div>
+      <div data-sweater-form-directive
+        data-ng-if="sweater.editing"
+        data-button-text="Save Sweater!"
+        data-form-name="edit{{sweater._id}}"
+        data-sweater="sweater"
+        data-heading-text="Editing {{sweater.name}}"
+        data-save="update(sweater)">
+        <button data-ng-click="sweater.editing = false">Cancel</button>
+      </div>
+      <button data-ng-if="!sweater.editing" data-ng-click="sweater.editing = true">This Sweater Has Seen Too Much, New Identity!</button>
+
+      <button data-ng-if="!sweater.editing" data-ng-click="remove(sweater)">Murder This Sweater!</button>
+    </li>
+  </ul>    
+</section>
