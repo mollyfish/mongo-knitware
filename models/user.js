@@ -9,7 +9,9 @@ var userSchema = new mongoose.Schema({
       username: String,
       password: String
     }
-  }
+  },
+  sweaters: Array,
+  size: String
 });
 
 userSchema.methods.hashPassword = function(password) {

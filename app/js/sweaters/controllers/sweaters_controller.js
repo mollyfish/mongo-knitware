@@ -3,8 +3,8 @@ module.exports = function(app) {
   app.controller('SweatersController', ['$scope', '$http', 'cfResource', '$location', function($scope, $http, cfResource, $location) {
     $scope.sweaters = [];
     $scope.errors = [];
-    $scope.defaults = {flavor: 'grizzly', fishPreference: 'Salmons'};
-    $scope.newSweater = angular.copy($scope.defaults);
+    $scope.sweaterDefaults = {name: 'New Sweater', knitter: 'You', knitterId: '', wearer: 'You', size: 'WM', style: {direction: 'topDown', neck: 'crew', shoulders: 'yoke', sleeveLength: 'full', shaping: 'noShape', length: 'hip'}};
+    $scope.newSweater = angular.copy($scope.sweaterDefaults);
     $scope.messageOne = "hello from inside the controller";
     var sweatersResource = cfResource('sweaters');
 
@@ -24,7 +24,7 @@ module.exports = function(app) {
       sweatersResource.create(sweater, function(err, data){
         if (err) return err;
         $scope.sweaters.push(data);
-        $scope.newSweater = angular.copy($scope.defaults); 
+        $scope.newSweater = angular.copy($scope.sweaterDefaults); 
       });
     };
 
