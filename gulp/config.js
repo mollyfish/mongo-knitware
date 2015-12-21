@@ -22,7 +22,15 @@ module.exports = {
   },
   html: {
     src: src + "/*.html",
-    dest: dest,
+    dest: dest
+  },
+  vendor: {
+    src: src + "/js/vendor/*.js",
+    dest: dest + '/js/vendor/'
+  },
+  canvas: {
+    src: src + "/js/render/*.js",
+    dest: dest + '/js/'
   },
   views: {
     src: src + '/templates/*.html',

@@ -1,0 +1,18 @@
+/*--CANVAS--------------------------------*/
+#render {
+  position: relative;
+  float: right;
+  // top: 28%;
+  // left: 50%;
+  width: 501px;
+  height: 361px;
+  border: 1px solid black;
+}
+#canvas1, #canvas2, #canvas3, #canvas4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.red {
+  border-color: red;
+}

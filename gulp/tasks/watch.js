@@ -6,4 +6,5 @@ gulp.task('watch', function() {
   gulp.watch(config.html.src, ['html']);
   gulp.watch(config.views.src, ['build:dev']);
   gulp.watch(config.sass.src, ['sass']);
+  gulp.watch(config.canvas.src, ['canvas']);
 });

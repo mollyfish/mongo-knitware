@@ -1,64 +1,76 @@
 <div>
+  <section id="render">
+    <canvas id="canvas1" width="501" height="341">Sweater schematic</canvas>
+    <canvas id="canvas2" width="501" height="341">Sweater schematic</canvas>
+    <canvas id="canvas3" width="501" height="341">Sweater schematic</canvas>
+    <canvas id="canvas4" width="501" height="341">Sweater schematic</canvas>
+  </section>
   <form name="{{formName}}" data-ng-submit="save({sweater: sweater})">
-    <h2>{{headingText}}</h2>
+    <h1>{{headingText}}</h1>
     <fieldset>
       <label for="sweaterName">Name your sweater:</label>
-      <input type="text" id="sweaterName" required data-ng-model="sweater.name" placeholder="Fuzzy Sweater">
+      <input type="text" id="sweaterName" required data-ng-model="sweater.name">
       <label for="sweaterName">Who is this sweater for?</label>
-      <input type="text" id="sweaterWearer" required data-ng-model="sweater.wearer" placeholder="Me">
+      <input type="text" id="sweaterWearer" required data-ng-model="sweater.wearer">
     </fieldset>
-    <fieldset>
+    <p>Choose a size:</p>
+    <fieldset class="radios">
       <div class="womens">
+        <p>Women's</p>
         <input type="radio" ng-model="sweater.size" name="size" id="{{sweater._id}}WXS" value="WXS">
-        <label for="{{sweater._id}}WXS"> Women's XS</label>
+        <label for="{{sweater._id}}WXS"> XS</label>
 
         <input type="radio" ng-model="sweater.size" name="size" id="{{sweater._id}}WS" value="WS">
-        <label for="{{sweater._id}}WS"> Women's S</label>
+        <label for="{{sweater._id}}WS"> S</label>
 
         <input type="radio" ng-model="sweater.size" name="size" id="{{sweater._id}}WM" value="WM">
-        <label for="{{sweater._id}}WM"> Women's M</label>
+        <label for="{{sweater._id}}WM"> M</label>
 
         <input type="radio" ng-model="sweater.size" name="size" id="{{sweater._id}}WL" value="WL">
-        <label for="{{sweater._id}}WL"> Women's L</label>
+        <label for="{{sweater._id}}WL"> L</label>
 
         <input type="radio" ng-model="sweater.size" name="size" id="{{sweater._id}}WXL" value="WXL">
-        <label for="{{sweater._id}}WXL"> Women's XL</label>
+        <label for="{{sweater._id}}WXL"> XL</label>
 
         <input type="radio" ng-model="sweater.size" name="size" id="{{sweater._id}}WXXL" value="WXXL">
-        <label for="{{sweater._id}}WXXL"> Women's XXL</label>
+        <label for="{{sweater._id}}WXXL"> XXL</label>
       </div>
       <div class="mens">
+        <p>Men's</p>
         <input type="radio" ng-model="sweater.size" name="size" id="{{sweater._id}}MS" value="MS">
-        <label for="{{sweater._id}}MS"> Men's S</label>
+        <label for="{{sweater._id}}MS"> S</label>
 
         <input type="radio" ng-model="sweater.size" name="size" id="{{sweater._id}}MM" value="MM">
-        <label for="{{sweater._id}}MM"> Men's M</label>
+        <label for="{{sweater._id}}MM"> M</label>
 
         <input type="radio" ng-model="sweater.size" name="size" id="{{sweater._id}}ML" value="ML">
-        <label for="{{sweater._id}}ML"> Men's L</label>
+        <label for="{{sweater._id}}ML"> L</label>
 
         <input type="radio" ng-model="sweater.size" name="size" id="{{sweater._id}}MXL" value="MXL">
-        <label for="{{sweater._id}}MXL"> Men's XL</label>
+        <label for="{{sweater._id}}MXL"> XL</label>
 
         <input type="radio" ng-model="sweater.size" name="size" id="{{sweater._id}}MXXL" value="MXXL">
-        <label for="{{sweater._id}}MXXL"> Men's XXL</label>
+        <label for="{{sweater._id}}MXXL"> XXL</label>
       </div>
     </fieldset>
-    <fieldset>
+    <p>Choose a knitting direction:</p>
+    <fieldset class="radios">
       <input type="radio" ng-model="sweater.style.direction" name="direction" id="{{sweater._id}}topDown" value="topDown">
       <label for="{{sweater._id}}topDown"> Top down</label>
 
       <input type="radio" ng-model="sweater.style.direction" name="direction" id="{{sweater._id}}bottomUp" value="bottomUp">
       <label for="{{sweater._id}}bottomUp"> Bottom up</label>
     </fieldset>
-    <fieldset>
+    <p>Collar style:</p>
+    <fieldset class="radios">
       <input type="radio" ng-model="sweater.style.neck" name="neck" id="{{sweater._id}}crew" value="crew">
       <label for="{{sweater._id}}crew"> Crew neck</label>
       
       <input type="radio" ng-model="sweater.style.neck" name="neck" id="{{sweater._id}}vee" value="vee">
       <label for="{{sweater._id}}vee"> V-neck</label>
     </fieldset>
-    <fieldset>
+    <p>Shoulder Construction:</p>
+    <fieldset class="radios">
       <input type="radio" ng-model="sweater.style.shoulders" name="shoulders" id="{{sweater._id}}raglan" value="raglan">
       <label for="{{sweater._id}}raglan"> Raglan</label>
       
@@ -68,7 +80,8 @@
       <input type="radio" ng-model="sweater.style.shoulders" name="shoulders" id="{{sweater._id}}setIn" value="setIn">
       <label for="{{sweater._id}}setIn"> Set-In</label>
     </fieldset>
-    <fieldset>
+    <p>Sleeve Length:</p>
+    <fieldset class="radios">
       <input type="radio" ng-model="sweater.style.sleeveLength" name="sleeveLength" id="{{sweater._id}}full" value="full">
       <label for="{{sweater._id}}full"> Long Sleeves</label>
 
@@ -81,19 +94,20 @@
       <input type="radio" ng-model="sweater.style.sleeveLength" name="sleeveLength" id="{{sweater._id}}none" value="none">
       <label for="{{sweater._id}}none"> Sleeveless</label>
     </fieldset>
-    <fieldset>
+    <p>Torso Shaping:</p>
+    <fieldset class="radios">
       <input type="radio" ng-model="sweater.style.shaping" name="shaping" id="{{sweater._id}}noShape" value="noShape">
-      <label for="{{sweater._id}}noShape"> No torso shaping</label>
+      <label for="{{sweater._id}}noShape"> None</label>
 
       <input type="radio" ng-model="sweater.style.shaping" name="shaping" id="{{sweater._id}}yesShape" value="yesShape">
-      <label for="{{sweater._id}}yesShape"> Torso shaping</label>
+      <label for="{{sweater._id}}yesShape"> Waist Shaping</label>
     </fieldset>
-    <fieldset>
+    <p>Sweater Length:</p>
+    <fieldset class="radios">
       <input type="radio" ng-model="sweater.style.length" name="length" id="{{sweater._id}}waist" value="waist">
-      <label for="{{sweater._id}}waist"> Waist length</label>
-
+      <label for="{{sweater._id}}waist" id="waistLength"> Waist length (standard)</label>
       <input type="radio" ng-model="sweater.style.length" name="length" id="{{sweater._id}}hip" value="hip">
-      <label for="{{sweater._id}}hip"> Hip length</label>
+      <label for="{{sweater._id}}hip" id="hipLength"> Hip length (long)</label>
     </fieldset>
 
     <button type="submit">{{buttonText}}</button>

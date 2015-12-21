@@ -1,17 +1,8 @@
 module.exports = function(app) {
-  app.directive('sweaterFormDirective', function() {
+  app.directive('sweaterRenderDirective', function() {
     return {
-      restrict: 'AC',
-      replace: true,
-      templateUrl: 'templates/sweater_form_template.html',
-      transclude: true,
-      scope: {
-        buttonText: '@',
-        headingText: '@',
-        formName: '@',
-        sweater: '=',
-        save: '&'
-      },
+      restrict: 'EA',
+      templateUrl: '/templates/sweater_render_template.html',
       link: function(scope, element, attrs) {
 
         $(element).find('#render').addClass('red');
@@ -219,10 +210,15 @@ module.exports = function(app) {
         drawYoke();
         drawCrew();
         drawNoShaping();
-        drawLongHem();
+        drawHem();
+
+        var canvas1 = $('#canvas1')[0];
+        var waistLength = $('#waistLength')[0];
+        console.log(waistLength);
         
-        $('input[value="waist"]').click(function() {
-          if ($('input[value="waist"]').is(':checked'))
+        waistLength.click(function() {
+          console.log('i hear you');
+          if (waistLength.hasClass('ng-valid-parse'))
             {  
               clearCanvas1();
               drawHem(); 
@@ -235,56 +231,56 @@ module.exports = function(app) {
               drawLongHem(); 
             }
         });
-        $('input[value="noShape"]').click(function() {
-          if ($('input[value="noShape"]').is(':checked'))
+        $('#no-shape').click(function() {
+          if ($('#no-shape').is(':checked'))
             {  
               clearCanvas2();
               drawNoShaping(); 
             }
         });
-        $('input[value="yesShape"]').click(function() {
-          if ($('input[value="yesShape"]').is(':checked'))
+        $('#yes-shape').click(function() {
+          if ($('#yes-shape').is(':checked'))
             {  
               clearCanvas2();
               drawShaping(); 
             }
         });
-        $('input[value="crew"]').click(function() {
-          if ($('input[value="crew"]').is(':checked'))
+        $('#crew').click(function() {
+          if ($('#crew').is(':checked'))
             {  
               clearCanvas3();
               drawCrew(); 
             }
         });
-        $('input[value="vee"]').click(function() {
-          if ($('input[value="vee"]').is(':checked'))
+        $('#vee').click(function() {
+          if ($('#vee').is(':checked'))
             {  
               clearCanvas3();
               drawVee(); 
             }
         });
-        $('input[value="raglan"]').click(function() {
-          if ($('input[value="raglan"]').is(':checked'))
+        $('#raglan').click(function() {
+          if ($('#raglan').is(':checked'))
             {  
               clearCanvas4();
               drawRaglan(); 
             }
         });
-        $('input[value="setIn"]').click(function() {
-          if ($('input[value="setIn"]').is(':checked'))
+        $('#set-in').click(function() {
+          if ($('#set-in').is(':checked'))
             { 
               clearCanvas4();
               drawSetIn(); 
             }
         });
-        $('input[value="yoke"]').click(function() {
-          if ($('input[value="yoke"]').is(':checked'))
+        $('#yoke').click(function() {
+          if ($('#yoke').is(':checked'))
             {
               clearCanvas4();
               drawYoke();
             }
         });
-      }  
-    }
+      }
+    };
   });
 };

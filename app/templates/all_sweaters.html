@@ -3,5 +3,9 @@
   <ul>
     <li data-ng-repeat="sweater in sweaters" data-sweater-directive data-sweater="sweater"></li>
   </ul>
-  <p><a href data-ng-click="signin()">Log in</a> or <a href data-ng-click="signup()">sign up</a> to wrangle some sweaters</p>
+
+  <a href data-ng-if="currentUser" data-ng-click="userSweaters()">See only your sweaters</a>
+
+
+  <p data-ng-if="!currentUser"><a href  data-ng-click="signin()">Log in</a> or <a href data-ng-click="signup()">sign up</a> to wrangle some sweaters</p>
 </section>
