@@ -27,6 +27,10 @@ module.exports = function(app) {
       $location.path('/signup');
     };
     
+    $scope.userSweaters = function() {
+      $location.path('/sweaters');
+    };
+
     $scope.allSweaters = function() {
       $location.path('/allsweaters');
     };

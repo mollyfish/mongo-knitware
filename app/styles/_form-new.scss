@@ -1,0 +1,36 @@
+form[name="newSweaterForm"] {
+  label {
+    display: block;
+    margin: 0.5em 0.5em 0.5em 0;
+    font-family: $main-font-italic, Arial, sans-serif;
+  }
+  p {
+    margin: 0.5em 0;
+  }
+  .radios {
+    margin-left: 1em;
+    label {
+      display: inline;
+    }
+    input {
+      position: relative;
+      bottom: 2px;
+    }
+  }
+  .womens p {
+    margin-top: 0;
+  }
+  button {
+    margin-top: 1em;
+    padding: 1em;
+    font-family: $main-font-bold, Arial, sans-serif;
+    font-size: 100%;
+    border-radius: 0.5em;
+    border: 1px solid #000;
+    background-color: #ff3f32;
+    &:hover {
+      border-color: blue;
+      background-color: #ddd;
+    }
+  }
+}
