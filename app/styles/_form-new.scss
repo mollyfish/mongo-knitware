@@ -34,3 +34,9 @@ form[name="newSweaterForm"] {
     }
   }
 }
+form[name^="edit"] {
+  @extend form[name="newSweaterForm"];
+  section {
+    display: none;
+  }
+}
