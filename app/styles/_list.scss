@@ -1,0 +1,21 @@
+*[data-sweater="sweater"] {
+  h3 {
+    font-family: $main-font-bold, Arial, sans-serif;
+    font-size: 115%;
+    margin: 0.5em 0 0.2em 0;
+    color: #a9a9a9;
+  }
+}
+button[data-ng-if="!sweater.editing"] {
+  margin-top: 1em;
+  padding: 0.5em;
+  font-family: $main-font-bold, Arial, sans-serif;
+  font-size: 70%;
+  border-radius: 0.5em;
+  border: 1px solid #000;
+  background-color: #ff3f32;
+  &:hover {
+    border-color: blue;
+    background-color: #ddd;
+  }
+}

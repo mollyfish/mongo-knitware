@@ -41,15 +41,19 @@ module.exports = function(app) {
     };
 
     $scope.remove = function(sweater) {
-      $scope.sweaters.splice($scope.sweaters.indexOf(sweater), 1);
-      $http.delete('/api/sweaters/' + sweater._id)
+      if (confirm('Are you sure you want to frog this sweater?')) {
+        $scope.sweaters.splice($scope.sweaters.indexOf(sweater), 1);
+        return $http.delete('/api/sweaters/' + sweater._id)
         .then(function(res) {
-          console.log('totes cool, sweater murdered');
+          console.log('totes cool, sweater frogged');
         }, function(err) {
           console.log(err.data);
-          $scope.errors.push('could not murderererer sweaterzzz: ' + sweater.name);
+          $scope.errors.push('could not frog this sweater: ' + sweater.name + '. Ribbit.');
           $scope.getAll();
         });
+      } else {
+        return;
+      }
     };
   }]);
 };
