@@ -24,11 +24,11 @@ sweaterStreamApp.config(['$routeProvider', function($route) {
       controller: 'AllSweatersController'
     })
     .when('/signup', {
-      templateUrl: '/templates/auth_view.html',
+      templateUrl: '/templates/auth_view_up.html',
       controller: 'SignupController'
     })
     .when('/signin', {
-      templateUrl: '/templates/auth_view.html',
+      templateUrl: '/templates/auth_view_in.html',
       controller: 'SigninController'
     })
     .otherwise({
